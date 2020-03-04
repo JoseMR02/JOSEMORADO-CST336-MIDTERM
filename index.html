@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Open Library</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form id="bookform">
+      <div>
+        <h1>Open Library</h1>
+        <p>Please enter the ISBN of the book you'd like to retrieve</p>
+      </div>
+
+    <div>
+      ISBN <input type="text" id="isbn">
+      
+      <input id="button" type="submit" value="query">
+    </div>
+
+    </form>
+    <div>
+      <p> Json Object: <p> <br><br>
+      <p id="data"> <p>
+    <div>
+
+    <script>
+      $("#bookform").on("submit", function(){
+        $.ajax({
+              method: "GET",
+                 url: "https://openlibrary.org/api/books?bibkeys=ISBN:0451526538&format=json&jscmd=data",
+             success: function(data) {
+
+              alert(data["0451526538"]);
+              //0451526538
+            }
+
+        });
+        event.preventDefault(); 
+      });
+    </script>
+
+    
+  </body>
+</html>
