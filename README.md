@@ -11,18 +11,9 @@ Question #3:
   The output of the snippet is 1, 2 1, 2
   
 Question #4: 
-  <html>
-    |
-    |---<head>
-    |      |---<title> 
-    |             |---"My Page"
-    |
-    |--- <body>
-            |---- <img>
-            |        |---"width, height..."
-            |
-            |--- <p>
-                  |---"and My Info"
-                  |
-                  |---<span>
-                         |---"My Name"
+                        <html>
+                     <body>      <head>
+               <img>               <title> 
+ "width, height      <p>              "My Page"
+          "and My Info"   <span>
+                             "My Name"         
